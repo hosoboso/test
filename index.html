@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<title>テスト</title>
+  <meta charset="utf-8">
+  <title>テスト</title>
+  <style>
+  body{
+	line-height:1.3em;
+	font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo UI", "Meiryo", "Helvetica Neue", arial, sans-serif;
+}
+  </style>
 </head>
+
 <body>
-テスト
+  <div id="view1" style="border: 1px solid gray; padding: 0.2em;margin:0.3em; display: inline-block;">
+    <script>
+  const week = ["日","月","火","水","木","金","土"];
+  const weekD = week[(new Date()).getDay()];
+  function today() {
+  document.getElementById("view1").innerHTML = (new Date()).getFullYear() + "年"
+  	 + ((new Date()).getMonth() + 1) + "月"
+  	 + (new Date()).getDate() + "日（"
+  	 + weekD + "）"
+  	 + (new Date()).getHours() + "時"
+  	 + (new Date()).getMinutes() + "分"
+  	 + (new Date()).getSeconds() + "秒";
+  }
+  setInterval(today, 1000);
+    </script>
+  </div>
 </body>
+
 </html>
