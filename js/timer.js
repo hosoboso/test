@@ -58,11 +58,11 @@ function timerCalc() {
 	document.getElementById("timeId").value = timeNum;
 	//正規表現に当てはまらない文字列はタイマーを停止
 	} else {
-	clearInterval(nIntervId);
-	nIntervId = null;
-	document.getElementById("stop").style.display = "none";
-	document.getElementById("start").style.display ="";
-	document.getElementById('endposition').innerHTML = '入力文字列は無効です。';
+		clearInterval(nIntervId);
+		nIntervId = null;
+		document.getElementById("stop").style.display = "none";
+		document.getElementById("start").style.display ="";
+		document.getElementById('endposition').innerHTML = '入力文字列は無効です。';
 	}
 }
 
