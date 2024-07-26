@@ -6,6 +6,16 @@ body{
 	font-size: 16px;
 }
 
+h1{
+	font-size: 20px;
+	margin: 0.1em 1em 1em 0.1em;
+	border-style:solid;
+	padding: 0.1em 0 0.1em 0.5em;
+	margin: 1em 0px 0.1em 0;
+	border-width:0 0 1px 10px;
+	border-color:#000;
+}
+
 .textstyle{
 	line-height: 1.5;
 	width:8rem;
@@ -18,7 +28,7 @@ body{
 	padding: 1em;
 }
 
-.buttonstyle{
+button{
 	font-family: "Kosugi Maru", arial, sans-serif;
 	border: 0;
 	line-height: 2.5;
@@ -28,7 +38,10 @@ body{
 	color: #fff;
 	text-shadow: 1px 1px 1px #000;
 	border-radius: 10px;
-	background-color: rgba(83, 102, 117, 1);
+}
+
+.Startbuttonstyle{
+	background-color: rgba(104, 147, 168, 1);
 	background-image: linear-gradient(
 		to top left,
 		rgba(0, 0, 0, 0.2),
@@ -40,11 +53,34 @@ body{
 		inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
 
-.buttonstyle:hover {
-	background-color: rgba(54, 74, 89, 1);
+.Startbuttonstyle:hover {
+	background-color: rgba(72, 133, 163, 1);
 }
 
-.buttonstyle:active {
+.Startbuttonstyle:active {
+	box-shadow:
+		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+		inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.Stopbuttonstyle{
+	background-color: rgba(64, 67, 92, 1);
+	background-image: linear-gradient(
+		to top left,
+		rgba(0, 0, 0, 0.2),
+		rgba(0, 0, 0, 0.2) 30%,
+		rgba(0, 0, 0, 0)
+	);
+	box-shadow:
+		inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+		inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.Stopbuttonstyle:hover {
+	background-color: rgba(18, 23, 64, 1);
+}
+
+.Stopbuttonstyle:active {
 	box-shadow:
 		inset -2px -2px 3px rgba(255, 255, 255, 0.6),
 		inset 2px 2px 3px rgba(0, 0, 0, 0.6);

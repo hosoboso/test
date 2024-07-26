@@ -19,51 +19,50 @@ function countdown() {
 
 //タイマー用関数timerCalc()
 function timerCalc() {
-	//テキストエリアの文字を取得する
+	//テキストエリアの文字列を取得する
 	let timeStr = document.getElementById("timeId").value;
 	
-	//テキストエリアの文字判定用の正規表現（数字及び「:」のみ）
-	let reStr = /^[0-9:]+$/;
+	//テキストエリアの文字判定用の正規表現（数字のみ）
+	let reStr1 = /^[0-9]+$/;
+	//テキストエリアの文字判定用の正規表現（「数字:数字」表示）
+	let reStr2 = /^[0-9]+:[0-9]+$/;
 
-	//テキストエリアの文字列が、数字及び「:」のみでなければエラー判定で、タイマーを停止＆ボタン表示反転
-	if ( !(reStr.test(timeStr)) ) {
-		timeNum = "Error";
-		clearInterval(nIntervId);
-		nIntervId = null;
-		document.getElementById("stop").style.display = "none";
-		document.getElementById("start").style.display ="";
-
-	} else {
-	//テキストエリアの文字列を、Number()を使って数字列timeNumに変換
-	let timeNum;
-		if (timeStr.includes(":")){
-		//テキストエリアの文字列に「:」が含まれる数字列なら「10:23」を「10分23秒」と判定して秒計算
-			arr = timeStr.split(":");
-			timeNum = Number(arr[0]) * 60 + Number(arr[1]);
-		} else {
+	if ( (reStr1.test(timeStr))||(reStr2.test(timeStr)) ) {
+		let timeNum;
+		//Number()でテキストエリアの文字列を数値変換
+		if ( reStr1.test(timeStr) ) {
 			timeNum = Number(timeStr);
+		} else {
+			//「10:23」などが入力されていた場合は「:」で分割してから残り秒数計算＆数値変換
+			let arr = timeStr.split(":");
+			timeNum = Number(arr[0]) * 60 + Number(arr[1]);
 		}
-	
-	//2秒以上の時は1秒ずつ減らす
-	if (timeNum > 1) {
-		timeNum = timeNum - 1;
-		if (timeNum > 59) {
-		//残り60秒以上の時は、「10:23」のような表示に変換する
+		
+		//2秒以上の時は1秒ずつ減らす
+		if (timeNum > 1) {
+			timeNum = timeNum - 1;
+			//「10:23」のような表示に変換する
 			let minute = Math.floor(timeNum / 60);
 			let second = ('0' + (timeNum % 60)).slice(-2);
 			timeNum = minute + ":" + second;
-		}
-	} else {
-		//カウントダウン0になったらタイマーを停止＆ボタン表示反転
-		timeNum = 0;
-		document.getElementById('endposition').innerHTML = '時間になりました。';
-		clearInterval(nIntervId);
-		nIntervId = null;
-		document.getElementById("stop").style.display = "none";
-		document.getElementById("start").style.display ="";
-	}
 
+		} else {
+			//カウントダウン0になったらタイマーを停止＆ボタン表示反転
+			timeNum = 0;
+			document.getElementById('endposition').innerHTML = '時間になりました。';
+			clearInterval(nIntervId);
+			nIntervId = null;
+			document.getElementById("stop").style.display = "none";
+			document.getElementById("start").style.display ="";
+		}
 	document.getElementById("timeId").value = timeNum;
+	//正規表現に当てはまらない文字列はタイマーを停止
+	} else {
+	clearInterval(nIntervId);
+	nIntervId = null;
+	document.getElementById("stop").style.display = "none";
+	document.getElementById("start").style.display ="";
+	document.getElementById('endposition').innerHTML = '入力文字列は無効です。';
 	}
 }
 
