@@ -1,8 +1,8 @@
 //setInterval用変数
 let nIntervId;
 
-let stopEl = document.getElementById("stop");
-let startEl = document.getElementById("start");
+const stopEl = document.getElementById("stop");
+const startEl = document.getElementById("start");
 
 //「stop」ボタンは初期状態で非表示にする
 stopEl.style.display ="none";
@@ -61,11 +61,11 @@ function timerCalc() {
 	document.getElementById("timeId").value = timeNum;
 	//正規表現に当てはまらない文字列はタイマーを停止
 	} else {
+		document.getElementById('endposition').innerHTML = '入力文字列は無効です。';
 		clearInterval(nIntervId);
 		nIntervId = null;
 		stopEl.style.display = "none";
 		startEl.style.display ="";
-		document.getElementById('endposition').innerHTML = '入力文字列は無効です。';
 	}
 }
 
