@@ -1,8 +1,11 @@
 //setInterval用変数
 let nIntervId;
 
+let stopEl = document.getElementById("stop");
+let startEl = document.getElementById("start");
+
 //「stop」ボタンは初期状態で非表示にする
-document.getElementById("stop").style.display ="none";
+stopEl.style.display ="none";
 
 //タイマー開始ボタン「start」を押した時の動作
 //タイマー用関数timerCalc()を1秒ごとに動かすための関数countdown()
@@ -12,8 +15,8 @@ function countdown() {
 	//同時に「stop」ボタンを表示、「start」ボタンを非表示にする
 	if (!nIntervId) {
 		nIntervId = setInterval(timerCalc, 1000);
-		document.getElementById("stop").style.display = "";
-		document.getElementById("start").style.display ="none";
+		stopEl.style.display = "";
+		startEl.style.display ="none";
 	}
 }
 
@@ -52,16 +55,16 @@ function timerCalc() {
 			document.getElementById('endposition').innerHTML = '時間になりました。';
 			clearInterval(nIntervId);
 			nIntervId = null;
-			document.getElementById("stop").style.display = "none";
-			document.getElementById("start").style.display ="";
+			stopEl.style.display = "none";
+			startEl.style.display ="";
 		}
 	document.getElementById("timeId").value = timeNum;
 	//正規表現に当てはまらない文字列はタイマーを停止
 	} else {
 		clearInterval(nIntervId);
 		nIntervId = null;
-		document.getElementById("stop").style.display = "none";
-		document.getElementById("start").style.display ="";
+		stopEl.style.display = "none";
+		startEl.style.display ="";
 		document.getElementById('endposition').innerHTML = '入力文字列は無効です。';
 	}
 }
@@ -72,9 +75,9 @@ function timerCalc() {
 function stopcountdown() {
 	clearInterval(nIntervId);
 	nIntervId = null;
-	document.getElementById("stop").style.display = "none";
-	document.getElementById("start").style.display ="";
+	stopEl.style.display = "none";
+	startEl.style.display ="";
 }
 
-document.getElementById("start").addEventListener("click", countdown);
-document.getElementById("stop").addEventListener("click", stopcountdown);
+startEl.addEventListener("click", countdown);
+stopEl.addEventListener("click", stopcountdown);
