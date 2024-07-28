@@ -25,6 +25,13 @@ function timerCalc() {
 	//テキストエリアの文字列を取得する
 	let timeStr = document.getElementById("timeId").value;
 	
+	//文字列に全角数字と「：」が含まれていたら半角文字に置換
+	const zenkaku = ["０","１","２","３","４","５","６","７","８","９","："];
+	const hankaku = ["0","1","2","3","4","5","6","7","8","9",":"];
+	for (let i = 0; i < zenkaku.length; i++) {
+		timeStr = timeStr.replaceAll(zenkaku[i], hankaku[i]);
+	}
+
 	//テキストエリアの文字判定用の正規表現（数字のみ）
 	let reStr1 = /^[0-9]+$/;
 	//テキストエリアの文字判定用の正規表現（「数字:数字」表示）
