@@ -9,6 +9,12 @@ https://github.com/sass/dart-sass
 sass example.scss output.css
 ```
 
+output.css.mapが必要ない場合は、
+
+```PowerShell
+sass --no-source-map example.scss output.css
+```
+
 ## フォルダ内のcssファイル内の改行をすべてCRLFに変更するPowerShellスクリプト
 
 sassコマンド後のcssの改行コードがLFになるので。
@@ -19,7 +25,7 @@ ls -r -file -filter *.css | % { (get-content -encoding UTF8 $_.FullName) -join "
 
 ## cssファイル内インデントを半角スペース2つ→[tab]に置換するPowerShellスクリプト
 
-sassコマンドでcssのインデントが指定できるんだかどうなのかわからないので。 
+sassコマンドでcssのインデントが指定できるんだかどうなのかわからないので。  
 半角スペース2つを4つにしたいなら、"`t"を"    "に。
 
 ```PowerShell
