@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap");
+
+@media (prefers-reduced-motion: no-preference) {
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  line-height: 1.3em;
+  font-family: "Kosugi Maru", arial, sans-serif;
+  font-size: 12px;
+  margin: 12px;
+}
+
+select {
+  font-family: "Kosugi Maru", arial, sans-serif;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0.1em 1em 1em 0.1em;
+  border-style: solid;
+  padding: 0.1em 0 0.1em 0.5em;
+  margin: 1em 0 0.1em 0;
+  border-width: 0 0 1px 10px;
+  border-color: #000;
+}
+
+h2 {
+  font-size: 16px;
+  margin: 0.1em 1em 1em 0.1em;
+  border-style: solid;
+  padding: 0.1em 0 0.1em 0.5em;
+  margin: 1em 0px 0.1em 0;
+  border-width: 0 0 1px 7px;
+  border-color: #000;
+}
+
+ul {
+  padding-left: 2rem;
+}
+
+li{
+  font-size: 16px;
+  margin:1rem 0 1rem 0;
+}
+
+table {
+  margin: 1em 0 1em 0;
+  border: 1px solid #252626;
+}
+
+table tr:nth-child(even) {
+  background-color: #dfe4ed;
+}
+
+th {
+  background-color: #bec8da;
+  color: #303030;
+  text-align: center;
+  border: 1px solid #b9bdbd;
+}
+
+td {
+  border: 1px solid #b9bdbd;
+}
+
+.socialWrap {
+  padding: 0.5em;
+}
+
+.gouseitab {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding:10px;
+  background-color: #bec8da;
+  border-top: 1px solid #bec8da;
+  border-right: 1px solid #bec8da;
+  border-left: 1px solid #bec8da;
+  margin: 0 0 0 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.gousei{
+  border: 1px solid #bec8da;
+  padding:10px;
+  margin: 0 0 0 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.form{
+  padding:0.5em;
+}
