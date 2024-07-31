@@ -31,7 +31,7 @@ const card = [
 "我が名はスザク",
 ];
 
-const esa = [
+const Food = [
 "ほかほか紅鮭弁当",
 "ジューシー超からあげ弁当",
 "シャキシャキ大盛りサラダ",
@@ -86,10 +86,10 @@ const result = [
 ];
 
 function cardResult() {
-	let n1 = document.cardForm.selectForm1.selectedIndex;
-	let n2 = document.cardForm.selectForm2.selectedIndex;
-	document.getElementById("view1").innerHTML = `「${card[n1]}」に「${esa[n2]}」を与えた結果は『${result[n1][n2]}』`;
+	const formNumCard = document.getElementById("selectCard").selectedIndex;
+	const formNumFood = document.getElementById("selectFood").selectedIndex;
+	document.getElementById("view").innerHTML = `「${card[formNumCard]}」に「${Food[formNumFood]}」を与えた結果は『${result[formNumCard][formNumFood]}』`;
 }
 
-select1.addEventListener("change", cardResult);
-select2.addEventListener("change", cardResult);
+selectCard.addEventListener("change", cardResult);
+selectFood.addEventListener("change", cardResult);
