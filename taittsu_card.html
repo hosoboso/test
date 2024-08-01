@@ -226,7 +226,7 @@
 
 <p>ネタバレに配慮して初期状態非表示にしています。</p>
 
-<input type="button" value="ここをクリックで表示" onclick="clickBtn1()" class="buttons"/><br>
+<input type="button" value="ここをクリックで表示" id="cbtn1" class="buttons"/><br>
 <div style="border: 1px solid gray; padding: 0.2em;" id="n2">
 <div id="n1">
 
@@ -271,17 +271,19 @@
 </div>
 </div>
 <script>
-document.getElementById("n1").style.visibility ="hidden";
+const n1Id = document.getElementById("n1");
+const n2Id = document.getElementById("n2");
+n1Id.style.visibility ="hidden";
 function clickBtn1(){
-	const n1 = document.getElementById("n1");
-	if(n1.style.visibility=="visible"){
-		n1.style.visibility ="hidden";
-		n2.style.visibility ="visible";
+	if(n1Id.style.visibility=="visible"){
+		n1Id.style.visibility ="hidden";
+		n2Id.style.visibility ="visible";
 	}else{
-		n1.style.visibility ="visible";
-		n2.style.visibility ="hidden";
+		n1Id.style.visibility ="visible";
+		n2Id.style.visibility ="hidden";
 	}
 }
+document.getElementById("cbtn1").addEventListener("click", clickBtn1);
 </script>
 
 </body>
