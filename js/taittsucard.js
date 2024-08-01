@@ -91,5 +91,4 @@ function cardResult() {
 	document.getElementById("view").innerHTML = `「${card[formNumCard]}」に「${Food[formNumFood]}」を与えた結果は『${result[formNumCard][formNumFood]}』`;
 }
 
-selectCard.addEventListener("change", cardResult);
-selectFood.addEventListener("change", cardResult);
+document.getElementById("card").addEventListener("change", cardResult);
