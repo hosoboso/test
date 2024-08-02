@@ -53,10 +53,10 @@ const Food = [
 const rate = ["大好物","けっこう好き","ちょっと苦手","かなり苦手",];
 
 const result = [
-[rate[0],rate[1],rate[0],rate[2],rate[3],rate[3],rate[3],rate[3],rate[1],rate[3],rate[1],"(未検証)",rate[2],rate[2],rate[2],rate[1]],
-[rate[0],rate[0],rate[2],rate[3],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],"(未検証)",rate[1],rate[1],rate[1],rate[1]],
-[rate[1],rate[3],rate[0],rate[0],rate[0],rate[0],rate[1],rate[2],rate[2],rate[2],rate[2],"(未検証)",rate[0],rate[1],rate[2],rate[0]],
-[rate[0],rate[0],rate[0],rate[1],rate[3],rate[2],rate[3],rate[1],rate[1],rate[2],rate[1],"(未検証)",rate[0],rate[0],rate[0],rate[0]],
+[rate[0],rate[1],rate[0],rate[2],rate[3],rate[3],rate[3],rate[3],rate[1],rate[3],rate[1],rate[1],rate[2],rate[2],rate[2],rate[1]],
+[rate[0],rate[0],rate[2],rate[3],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[1],rate[1],rate[1],rate[1]],
+[rate[1],rate[3],rate[0],rate[0],rate[0],rate[0],rate[1],rate[2],rate[2],rate[2],rate[2],rate[2],rate[0],rate[1],rate[2],rate[0]],
+[rate[0],rate[0],rate[0],rate[1],rate[3],rate[2],rate[3],rate[1],rate[1],rate[2],rate[1],rate[1],rate[0],rate[0],rate[0],rate[0]],
 [rate[2],rate[2],rate[1],rate[0],rate[0],rate[0],rate[0],rate[0],rate[3],rate[2],rate[2],"(未検証)",rate[3],rate[3],rate[3],rate[3]],
 [rate[0],rate[0],rate[0],rate[0],rate[2],rate[2],rate[3],rate[3],rate[2],rate[2],rate[3],"(未検証)",rate[3],rate[1],rate[1],rate[0]],
 [rate[0],rate[0],rate[0],rate[3],rate[2],rate[2],rate[2],rate[0],rate[1],rate[0],rate[0],"(未検証)",rate[2],rate[0],rate[0],rate[0]],

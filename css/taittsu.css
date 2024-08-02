@@ -94,3 +94,24 @@ td {
 .form{
   padding:0.5em;
 }
+
+/* 上に戻るボタン */
+
+#gotop{
+  display: block;
+  position: fixed;
+  opacity: 0.4;
+  bottom:4em;
+  right:0.5em;
+  z-index: 10;
+  transition: 0.8s;
+}
+
+#gotop a{
+  text-decoration:none;
+}
+
+#gotop:hover{
+  opacity: 0.8;
+  transition: 0.8s;
+}
