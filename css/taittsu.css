@@ -1,11 +1,10 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap");
-
 @media (prefers-reduced-motion: no-preference) {
   html:focus-within {
     scroll-behavior: smooth;
   }
 }
-
 body {
   line-height: 1.3em;
   font-family: "Kosugi Maru", arial, sans-serif;
@@ -41,29 +40,25 @@ ul {
   padding-left: 2rem;
 }
 
-li{
+li {
   font-size: 16px;
-  margin:1rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
 }
 
 table {
   margin: 1em 0 1em 0;
-  border: 1px solid #252626;
+  border: 1px solid #000;
 }
-
 table tr:nth-child(even) {
   background-color: #dfe4ed;
 }
-
-th {
+table th {
   background-color: #bec8da;
-  color: #303030;
   text-align: center;
-  border: 1px solid #b9bdbd;
+  border: 1px solid #cbcccd;
 }
-
-td {
-  border: 1px solid #b9bdbd;
+table td {
+  border: 1px solid #cbcccd;
 }
 
 .socialWrap {
@@ -73,7 +68,7 @@ td {
 .gouseitab {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding:10px;
+  padding: 10px;
   background-color: #bec8da;
   border-top: 1px solid #bec8da;
   border-right: 1px solid #bec8da;
@@ -83,35 +78,32 @@ td {
   font-size: 16px;
 }
 
-.gousei{
+.gousei {
   border: 1px solid #bec8da;
-  padding:10px;
+  padding: 10px;
   margin: 0 0 0 5px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
-.form{
-  padding:0.5em;
+.form {
+  padding: 0.5em;
 }
 
 /* 上に戻るボタン */
-
-#gotop{
+#gotop {
   display: block;
   position: fixed;
   opacity: 0.4;
-  bottom:4em;
-  right:0.5em;
+  bottom: 4em;
+  right: 0.5em;
   z-index: 10;
   transition: 0.8s;
 }
-
-#gotop a{
-  text-decoration:none;
+#gotop a {
+  text-decoration: none;
 }
-
-#gotop:hover{
+#gotop:hover {
   opacity: 0.8;
   transition: 0.8s;
 }
