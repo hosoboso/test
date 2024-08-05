@@ -85,10 +85,8 @@ const result = [
 [rate[2],rate[0],rate[2],rate[3],rate[3],rate[2],rate[3],rate[0],rate[1],rate[0],rate[0],"(未検証)",rate[3],rate[0],rate[1],rate[2]],
 ];
 
-function cardResult() {
+document.getElementById("card").addEventListener("click", () => {
 	const formNumCard = document.getElementById("selectCard").selectedIndex;
 	const formNumFood = document.getElementById("selectFood").selectedIndex;
-	document.getElementById("view").innerHTML = `「${card[formNumCard]}」に「${Food[formNumFood]}」を与えた結果は『${result[formNumCard][formNumFood]}』`;
-}
-
-document.getElementById("card").addEventListener("change", cardResult);
+	document.getElementById("view").innerHTML = `「${card[formNumCard]}」に「${Food[formNumFood]}」を与えた結果は『${result[formNumCard][formNumFood]}』`;;
+});
