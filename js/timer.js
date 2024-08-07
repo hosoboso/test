@@ -31,12 +31,11 @@ function timerCalc() {
 	for (let i = 0; i < zenkaku.length; i++) {
 		timeStr = timeStr.replaceAll(zenkaku[i], hankaku[i]);
 	}
-
 	//テキストエリアの文字判定用の正規表現（数字のみ）
 	let reStr1 = /^[0-9]+$/;
 	//テキストエリアの文字判定用の正規表現（「数字:数字」表示）
 	let reStr2 = /^[0-9]+:[0-9]+$/;
-
+	
 	if ( (reStr1.test(timeStr))||(reStr2.test(timeStr)) ) {
 		let timeNum;
 		//Number()でテキストエリアの文字列を数値変換
@@ -60,19 +59,13 @@ function timerCalc() {
 			//カウントダウン0になったらタイマーを停止＆ボタン表示反転
 			timeNum = 0;
 			document.getElementById('endposition').innerHTML = '時間になりました。';
-			clearInterval(nIntervId);
-			nIntervId = null;
-			stopEl.style.display = "none";
-			startEl.style.display ="";
+			stopcountdown();
 		}
 	document.getElementById("timeId").value = timeNum;
 	//正規表現に当てはまらない文字列はタイマーを停止
 	} else {
 		document.getElementById('endposition').innerHTML = '入力文字列は無効です。';
-		clearInterval(nIntervId);
-		nIntervId = null;
-		stopEl.style.display = "none";
-		startEl.style.display ="";
+		stopcountdown();
 	}
 }
 
