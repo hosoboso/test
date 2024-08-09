@@ -58,6 +58,10 @@ function timerCalc() {
 		} else {
 			//カウントダウン0になったらタイマーを停止＆ボタン表示反転
 			timeNum = 0;
+			if (sechk.checked) {	//チェックボックスでサウンドONの時
+				const music = new Audio('sound/se1.mp3');	//HTMLAudioElement: Audio() コンストラクター
+				music.play();
+			}
 			document.getElementById('endposition').innerHTML = '時間になりました。';
 			stopcountdown();
 		}
