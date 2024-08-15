@@ -17,6 +17,8 @@ function charaReplace(x) {
 //テキストエリアの文字判定用の正規表現（数字のみ）
 const re = /^[0-9]+$/;
 
+const resurtText =["計算結果は整数値ではないため四捨五入しています。","入力文字列は無効です。"];
+
 //横の長さを入力した時に縦の長さに計算結果を入力する
 function ratioCalc1() {
 	//ドロップダウンメニュー値取得
@@ -76,23 +78,19 @@ function ratioCalc1() {
 	}
 
 	//テキストエリア（横の長さ）の文字列を取得する
-	let width_IdStr = dId.value;
-
-	charaReplace(width_IdStr);
+	charaReplace(dId.value);
 	
-	let width_result;
-	let about_text = "計算結果は整数値ではないため四捨五入しています。";
+	let about_text = resurtText[0];
 
-	if (re.test(width_IdStr)) {
-		let widthNum = Number(width_IdStr);
-		width_result = Math.round(widthNum * box_l / box_w);
+	if (re.test(dId.value)) {
+		let widthNum = Number(dId.value);
+		lId.value = Math.round(widthNum * box_l / box_w);
 		if ( widthNum * box_l % box_w == 0) {
 			about_text = "";
 		}
-		lId.value = width_result;
 		vId.innerHTML = `<div style="width: ${box_w}px;height: ${box_l}px;background-color: #CCC;padding:1em;margin:1em;">${about_text}</div>`;
 	} else {
-		vId.innerHTML = '入力文字列は無効です。';
+		vId.innerHTML = resurtText[1];
 	}
 }
 
@@ -155,23 +153,20 @@ function ratioCalc2() {
 	}
 
 	//テキストエリア（縦の長さ）の文字列を取得する
-	let length_IdStr = lId.value;
-	
-	charaReplace(length_IdStr);
+	charaReplace(lId.value);
 
 	let length_result;
-	let about_text = "計算結果は整数値ではないため四捨五入しています。";
+	let about_text = resurtText[0];
 
-	if (re.test(length_IdStr)) {
-		let lengthNum = Number(length_IdStr);
-		length_result = Math.round(lengthNum * box_l / box_w);
+	if (re.test(lId.value)) {
+		let lengthNum = Number(lId.value);
+		dId.value = Math.round(lengthNum * box_l / box_w);
 		if ( lengthNum * box_l % box_w == 0) {
 			about_text = "";
 		}
-		dId.value = length_result;
 		vId.innerHTML = `<div style="width: ${box_l}px;height: ${box_w}px;background-color: #CCC;padding:1em;margin:1em;">${about_text}</div>`;
 	} else {
-		vId.innerHTML = '入力文字列は無効です。';
+		vId.innerHTML = resurtText[1];
 	}
 }
 
