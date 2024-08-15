@@ -6,7 +6,14 @@ const vId = d.getElementById("view");
 
 const zenkaku = ["０","１","２","３","４","５","６","７","８","９"];
 const hankaku = ["0","1","2","3","4","5","6","7","8","9"];
-	
+
+//文字列に全角数字が含まれていたら半角文字に置換
+function charaReplace(x) {
+	for (let i = 0; i < zenkaku.length; i++) {
+		x = x.replaceAll(zenkaku[i], hankaku[i]);
+	}
+}
+
 //テキストエリアの文字判定用の正規表現（数字のみ）
 const re = /^[0-9]+$/;
 
@@ -71,11 +78,8 @@ function ratioCalc1() {
 	//テキストエリア（横の長さ）の文字列を取得する
 	let width_IdStr = dId.value;
 
-	//文字列に全角数字が含まれていたら半角文字に置換
-	for (let i = 0; i < zenkaku.length; i++) {
-		width_IdStr = width_IdStr.replaceAll(zenkaku[i], hankaku[i]);
-	}
-
+	charaReplace(width_IdStr);
+	
 	let width_result;
 	let about_text = "計算結果は整数値ではないため四捨五入しています。";
 
@@ -152,11 +156,8 @@ function ratioCalc2() {
 
 	//テキストエリア（縦の長さ）の文字列を取得する
 	let length_IdStr = lId.value;
-
-	//文字列に全角数字が含まれていたら半角文字に置換
-	for (let i = 0; i < zenkaku.length; i++) {
-		length_IdStr = length_IdStr.replaceAll(zenkaku[i], hankaku[i]);
-	}
+	
+	charaReplace(length_IdStr);
 
 	let length_result;
 	let about_text = "計算結果は整数値ではないため四捨五入しています。";
