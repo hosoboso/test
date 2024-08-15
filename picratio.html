@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>画像比率計算</title>
+	<link href="css/picratio.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>画像比率計算</h1>
+
+<p>テキストエリアに数値を入力すると指定した比率に従い長さを表示します。</p>
+
+<div id="form_display">
+	<form id="formid">
+		<label>画像比率選択（横：縦）</label><br>
+		<select id="selectid" size="6">
+		<option selected>16:9【横長】</option>
+		<option>4:3【横長】</option>
+		<option>5:3【横長】</option>
+		<option>ほぼ黄金比（8:5）【横長】</option>
+		<option>A版比率（297:210）【横長】</option>
+		<option>B版比率（353:250）【横長】</option>
+		<option>9:16【縦長】</option>
+		<option>3:4【縦長】</option>
+		<option>3:5【縦長】</option>
+		<option>ほぼ黄金比（5:8）【縦長】</option>
+		<option>A版比率（210:297）【縦長】</option>
+		<option>B版比率（250:353）【縦長】</option>
+		</select>
+	</form>
+</div>
+
+<div class="grid">
+
+	<div class="grid1">
+	</div>
+
+	<div class="grid2">
+		横の長さ<br>
+		<input type="text" id="width_Id" value="1600" placeholder="数字入力" class="textstyle" required size="5">
+	</div>
+
+	<div class="grid3">
+		縦の長さ<br>
+		<input type="text" id="length_Id" value="900" placeholder="数字入力" class="textstyle" required size="5">
+	</div>
+
+	<div class="grid4">
+		<div id="view">
+			<div style="
+			width: 160px;
+			height: 90px;
+			background-color: #CCC;
+			padding:1em;
+			margin:1em;">
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script src="js/picratio.js"></script>
+
+</body>
+</html>

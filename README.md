@@ -7,4 +7,7 @@ https://hosoboso.github.io/test/taittsu_card.html
 https://hosoboso.github.io/test/timer.html  
   
 デジタル＆アナログ時計  
-https://hosoboso.github.io/test/clock.html
+https://hosoboso.github.io/test/clock.html  
+  
+画像比率計算  
+https://hosoboso.github.io/test/picratio.html
