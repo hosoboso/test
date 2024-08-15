@@ -22,11 +22,10 @@ const resurtText =["計算結果は整数値ではないため四捨五入して
 //横の長さを入力した時に縦の長さに計算結果を入力する
 function ratioCalc1() {
 	//ドロップダウンメニュー値取得
-	let n = sId.selectedIndex;
 	let box_w;
 	let box_l;
 	
-	switch (n) {
+	switch (sId.selectedIndex) {
 		case 0:
 			box_w = 160;
 			box_l = 90;
@@ -97,11 +96,10 @@ function ratioCalc1() {
 //縦の長さを入力した時に横の長さに計算結果を入力する
 function ratioCalc2() {
 	//ドロップダウンメニュー値取得
-	let n = sId.selectedIndex;
 	let box_w;
 	let box_l;
 	
-	switch (n) {
+	switch (sId.selectedIndex) {
 		case 0:
 			box_w = 90;
 			box_l = 160;
