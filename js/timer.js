@@ -32,9 +32,9 @@ function timerCalc() {
 		timeStr = timeStr.replaceAll(zenkaku[i], hankaku[i]);
 	}
 	//テキストエリアの文字判定用の正規表現（数字のみ）
-	let reStr1 = /^[0-9]+$/;
+	const reStr1 = /^[0-9]+$/;
 	//テキストエリアの文字判定用の正規表現（「数字:数字」表示）
-	let reStr2 = /^[0-9]+:[0-9]+$/;
+	const reStr2 = /^[0-9]+:[0-9]+$/;
 	
 	if ( (reStr1.test(timeStr))||(reStr2.test(timeStr)) ) {
 		let timeNum;
