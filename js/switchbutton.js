@@ -1,3 +1,5 @@
+{
+
 const d = document;
 const hi = "hidden";
 const vi = "visible";
@@ -120,3 +122,5 @@ d.getElementById("cbtnall").addEventListener("click", () => {
 		}
 	}
 ;});
+
+}

@@ -1,3 +1,5 @@
+{
+
 const aTag = [
 document.getElementById("x-social-button"),
 document.getElementById("facebook-social-button"),
@@ -22,4 +24,6 @@ const newUrl = [
 
 for (let i = 0; i < aTag.length; i++) {
 	aTag[i].setAttribute("href",newUrl[i]);
+}
+
 }
