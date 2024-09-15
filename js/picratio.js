@@ -1,11 +1,11 @@
-const d = document;
-const dId = d.getElementById("width_Id");
-const lId = d.getElementById("length_Id");
-const sId = d.getElementById("selectid");
-const vId = d.getElementById("view");
+const d = document,
+dId = d.getElementById("width_Id"),
+lId = d.getElementById("length_Id"),
+sId = d.getElementById("selectid"),
+vId = d.getElementById("view"),
 
-const zenkaku = ["０","１","２","３","４","５","６","７","８","９"];
-const hankaku = ["0","1","2","3","4","5","6","7","8","9"];
+zenkaku = ["０","１","２","３","４","５","６","７","８","９"],
+hankaku = ["0","1","2","3","4","5","6","7","8","9"];
 
 //文字列に全角数字が含まれていたら半角文字に置換
 function charaReplace(x) {

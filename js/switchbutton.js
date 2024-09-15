@@ -1,8 +1,8 @@
 {
 
-const d = document;
-const hi = "hidden";
-const vi = "visible";
+const d = document,
+hi = "hidden",
+vi = "visible";
 
 const nd = [
 	"0",
