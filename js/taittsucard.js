@@ -31,9 +31,9 @@ const card = [
 "究極時空魔法「ル・フォースガル」",
 "ビッグバンキック",
 "我が名はスザク",
-];
+],
 
-const Food = [
+Food = [
 "ほかほか紅鮭弁当",
 "ジューシー超からあげ弁当",
 "シャキシャキ大盛りサラダ",
@@ -50,11 +50,11 @@ const Food = [
 "ポッカリスイート",
 "IN THE エナジーゼリー",
 "とても速い麦茶",
-];
+],
 
-const rate = ["大好物","けっこう好き","ちょっと苦手","かなり苦手",];
+rate = ["大好物","けっこう好き","ちょっと苦手","かなり苦手",],
 
-const result = [
+result = [
 [rate[0],rate[1],rate[0],rate[2],rate[3],rate[3],rate[3],rate[3],rate[1],rate[3],rate[1],rate[1],rate[2],rate[2],rate[2],rate[1]],
 [rate[0],rate[0],rate[2],rate[3],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[1],rate[1],rate[1],rate[1]],
 [rate[1],rate[3],rate[0],rate[0],rate[0],rate[0],rate[1],rate[2],rate[2],rate[2],rate[2],rate[2],rate[0],rate[1],rate[2],rate[0]],
@@ -76,20 +76,19 @@ const result = [
 [rate[0],rate[0],rate[0],rate[1],rate[0],rate[0],rate[0],rate[2],rate[0],rate[0],rate[0],rate[0],rate[2],rate[2],rate[2],rate[3]],
 [rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[2],rate[2],rate[3],rate[1]],
 [rate[3],rate[3],rate[3],rate[3],rate[3],rate[3],rate[3],rate[3],rate[3],rate[3],rate[2],rate[3],rate[0],rate[0],rate[0],rate[1]],
-[rate[3],rate[0],rate[0],rate[0],rate[1],rate[0],rate[1],rate[0],rate[2],rate[3],rate[3],"(未検証)",rate[3],rate[0],rate[0],rate[0]],
-[rate[3],rate[0],rate[3],rate[3],rate[3],rate[3],rate[2],rate[1],rate[3],rate[2],rate[3],"(未検証)",rate[0],rate[0],rate[0],rate[1]],
-[rate[1],rate[0],rate[2],rate[3],rate[1],rate[1],rate[1],rate[1],rate[0],rate[0],rate[0],"(未検証)",rate[0],rate[0],rate[0],rate[0]],
-[rate[1],rate[3],rate[0],rate[1],rate[1],rate[1],rate[1],rate[0],rate[1],rate[1],rate[2],"(未検証)",rate[1],rate[1],rate[3],rate[1]],
-[rate[0],rate[2],rate[1],rate[0],rate[1],rate[0],rate[1],rate[0],rate[2],rate[3],rate[3],"(未検証)",rate[0],rate[2],rate[1],rate[1]],
-[rate[1],rate[2],rate[1],rate[2],rate[1],rate[0],rate[0],rate[0],rate[0],rate[1],rate[0],"(未検証)",rate[3],rate[3],rate[2],rate[0]],
-[rate[0],rate[1],rate[0],rate[3],rate[2],rate[2],rate[2],rate[1],rate[1],rate[0],rate[0],"(未検証)",rate[0],rate[0],rate[0],rate[2]],
-[rate[2],rate[1],rate[3],rate[3],rate[2],rate[2],rate[1],rate[3],rate[1],rate[2],rate[2],"(未検証)",rate[3],rate[3],rate[3],rate[3]],
-[rate[2],rate[0],rate[2],rate[3],rate[3],rate[2],rate[3],rate[0],rate[1],rate[0],rate[0],"(未検証)",rate[3],rate[0],rate[1],rate[2]],
+[rate[3],rate[0],rate[0],rate[0],rate[1],rate[0],rate[1],rate[0],rate[2],rate[3],rate[3],rate[2],rate[3],rate[0],rate[0],rate[0]],
+[rate[3],rate[0],rate[3],rate[3],rate[3],rate[3],rate[2],rate[1],rate[3],rate[2],rate[3],rate[1],rate[0],rate[0],rate[0],rate[1]],
+[rate[1],rate[0],rate[2],rate[3],rate[1],rate[1],rate[1],rate[1],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0]],
+[rate[1],rate[3],rate[0],rate[1],rate[1],rate[1],rate[1],rate[0],rate[1],rate[1],rate[2],rate[2],rate[1],rate[1],rate[3],rate[1]],
+[rate[0],rate[2],rate[1],rate[0],rate[1],rate[0],rate[1],rate[0],rate[2],rate[3],rate[3],rate[2],rate[0],rate[2],rate[1],rate[1]],
+[rate[1],rate[2],rate[1],rate[2],rate[1],rate[0],rate[0],rate[0],rate[0],rate[1],rate[0],rate[0],rate[3],rate[3],rate[2],rate[0]],
+[rate[0],rate[1],rate[0],rate[3],rate[2],rate[2],rate[2],rate[1],rate[1],rate[0],rate[0],rate[0],rate[0],rate[0],rate[0],rate[2]],
+[rate[2],rate[1],rate[3],rate[3],rate[2],rate[2],rate[1],rate[3],rate[1],rate[2],rate[2],rate[0],rate[3],rate[3],rate[3],rate[3]],
+[rate[2],rate[0],rate[2],rate[3],rate[3],rate[2],rate[3],rate[0],rate[1],rate[0],rate[0],rate[0],rate[3],rate[0],rate[1],rate[2]],
 ];
 
 document.getElementById("cardid").addEventListener("change", () => {
-	const n = document.getElementById("selectCard").selectedIndex;
-	const m = document.getElementById("selectFood").selectedIndex;
+	const n = document.getElementById("selectCard").selectedIndex, m = document.getElementById("selectFood").selectedIndex;
 	document.getElementById("view").innerHTML = `「${card[n]}」に「${Food[m]}」を与えた結果は『${result[n][m]}』`;
 });
 
