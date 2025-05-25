@@ -1,8 +1,13 @@
 $font-stack: "Kosugi Maru", arial, sans-serif;
 $base-color: #6996aa;
 $push-color: #697ab3;
+$CountUP-color: #a34e92;
 
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
 
 body{
 	line-height:1.3em;
@@ -71,4 +76,22 @@ button{
 	&:hover {
 		background-color: darken($push-color, 10%);
 	}
+}
+
+.CountUPbuttonstyle {
+	background-color: $CountUP-color;
+	&:hover {
+		background-color: darken($CountUP-color, 10%);
+	}
+}
+
+.selectradio {
+  padding: .1em;
+  margin: 1em;
+  background-color: #FAFAFA;
+
+  > li {
+    margin: .5em 0;
+    list-style-type: none;
+  }
 }

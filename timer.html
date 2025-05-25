@@ -8,23 +8,60 @@
 </head>
 <body>
 
-<h1>カウントダウンタイマー</h1>
+<h1>カウント＆タイマー</h1>
 
-<p>秒数、または、「X分Y秒」を「X:Y」形式で入力して「Start」ボタンを押すとカウントダウンします。<br>
-「Stop」ボタンでカウントダウンを中断できます。<br>
-初期値で3分（3:00）をセットしてあります。</p>
+<form id="radiotimer">
+<ul class="selectradio">
+	<li><label><input type="radio" id="countdowntimer_id" name="timername" checked/>カウントダウンタイマー</label></li>
+	<li><label><input type="radio" id="countup_id" name="timername"/>カウントアップ</label></li>
+</ul>
+</form>
 
-<input type="text" id="timeId" value="3:00" placeholder="数字入力" class="textstyle" required minlength="1" maxlength="6">
-<button class="Startbuttonstyle" id="start">Start</button>
-<button class="Stopbuttonstyle" id="stop">Stop</button>
+<div id="countdowntimer_aria">
 
-<p><input type="checkbox" id="sechk"><label for="sechk">カウントダウン終了時に効果音を再生する</label></p>
+	<p>秒数、または、「X分Y秒」を「X:Y」形式で入力して「Start」ボタンを押すとカウントダウンします。<br>
+	「Stop」ボタンでカウントダウンを中断できます。<br>
+	初期値で3分（3:00）をセットしてあります。</p>
 
-<div id="endposition" class="endstyle"></div>
+	<input type="text" id="timeId" value="3:00" placeholder="数字入力" class="textstyle" required minlength="1" maxlength="6">
+	<button class="Startbuttonstyle" id="start">Start</button>
+	<button class="Stopbuttonstyle" id="stop">Stop</button>
+
+	<p><input type="checkbox" id="sechk"><label for="sechk">カウントダウン終了時に効果音を再生する</label></p>
+
+	<div id="endposition" class="endstyle"></div>
+
+	<div style="font-size: small;text-align: right;">効果音：<br>
+	<a href="https://www.springin.org/sound-stock/" target="_blank">無料 BGM・効果音のフリー音源素材 | Springin’ Sound Stock</a></div>
+
+</div>
+<div id="countup_aria">
+
+	<p>ボタンを押す毎に、入力した数値からカウントアップしていきます。<br>
+	初期値で1をセットしてあります。最大値は9999です。</p>
+
+	<input type="text" id="CountUPtimeId" value="1" placeholder="数字入力" class="textstyle" required minlength="1" maxlength="4">
+	<button class="CountUPbuttonstyle" id="CountUP">CountUP</button>
+
+	<div id="CountUPendposition" class="endstyle"></div>
+
+</div>
+
+<script>{	//表示切替用
+const countdowntimer_ariaId = document.getElementById("countdowntimer_aria");
+const countup_ariaId = document.getElementById("countup_aria");
+countup_ariaId.style.display ="none";
+document.getElementById("radiotimer").addEventListener("change", () => {
+	if (document.getElementById("countdowntimer_id").checked) {
+		countup_ariaId.style.display ="none";
+		countdowntimer_ariaId.style.display = "";
+	} else {
+		countup_ariaId.style.display ="";
+		countdowntimer_ariaId.style.display = "none";
+	}
+});
+}</script>
 
 <script src="js/timer.js"></script>
-
-<div style="font-size: small;text-align: right;">効果音：<br>
-<a href="https://www.springin.org/sound-stock/" target="_blank">無料 BGM・効果音のフリー音源素材 | Springin’ Sound Stock</a></div>
 </body>
 </html>

@@ -1,61 +1,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap");
+html {
+    -webkit-text-size-adjust: 100%;
+}
 body {
-  line-height: 1.3em;
-  font-family: "Kosugi Maru", arial, sans-serif;
-  font-size: 16px;
+    line-height: 1.3em;
+    font-family: "Kosugi Maru", arial, sans-serif;
+    font-size: 16px;
 }
-
 h1 {
-  font-size: 20px;
-  margin: 0.1em 1em 1em 0.1em;
-  border-style: solid;
-  padding: 0.1em 0 0.1em 0.5em;
-  margin: 1em 0px 0.1em 0;
-  border-width: 0 0 1px 10px;
-  border-color: #000;
+    font-size: 20px;
+    margin: 0.1em 1em 1em 0.1em;
+    border-style: solid;
+    padding: 0.1em 0 0.1em 0.5em;
+    margin: 1em 0px 0.1em 0;
+    border-width: 0 0 1px 10px;
+    border-color: #000;
 }
-
 .textstyle {
-  line-height: 1.5;
-  width: 8rem;
-  font-size: 2rem;
-  font-family: "Kosugi Maru", arial, sans-serif;
+    line-height: 1.5;
+    width: 8rem;
+    font-size: 2rem;
+    font-family: "Kosugi Maru", arial, sans-serif;
 }
-
 .endstyle {
-  font-size: 1.5rem;
-  padding: 1em;
+    font-size: 1.5rem;
+    padding: 1em;
 }
-
 button {
-  font-family: "Kosugi Maru", arial, sans-serif;
-  border: 0;
-  line-height: 2.2;
-  padding: 0 20px;
-  font-size: 1.4rem;
-  text-align: center;
-  color: #fff;
-  text-shadow: 1px 1px 1px #000;
-  border-radius: 10px;
-  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    font-family: "Kosugi Maru", arial, sans-serif;
+    border: 0;
+    line-height: 2.2;
+    padding: 0 20px;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
 button:active {
-  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
-
 .Startbuttonstyle {
-  background-color: #6996aa;
+    background-color: #6996aa;
 }
 .Startbuttonstyle:hover {
-  background-color: #517c8f;
+    background-color: #517c8f;
 }
-
 .Stopbuttonstyle {
-  background-color: #697ab3;
+    background-color: #697ab3;
 }
 .Stopbuttonstyle:hover {
-  background-color: #4e609b;
+    background-color: #4e609b;
+}
+.CountUPbuttonstyle {
+    background-color: #a34e92;
+}
+.CountUPbuttonstyle:hover {
+    background-color: #813d73;
+}
+.selectradio {
+    padding: .1em;
+    margin: 1em;
+    background-color: #FAFAFA;
+}
+.selectradio > li {
+    margin: .5em 0;
+    list-style-type: none;
 }
 
 /*# sourceMappingURL=timer.css.map */

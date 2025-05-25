@@ -1,3 +1,17 @@
+//共通処理用-----------------------------------------
+
+//テキストエリアの文字判定用の正規表現（数字のみ）
+const reStr1 = /^[0-9]+$/;
+//テキストエリアの文字判定用の正規表現（「数字:数字」表示）
+const reStr2 = /^[0-9]+:[0-9]+$/;
+
+//全角・半角変換用
+const zenkaku = ["０","１","２","３","４","５","６","７","８","９"];
+const hankaku = ["0","1","2","3","4","5","6","7","8","9"];
+
+
+//カウントダウンタイマー-----------------------------------------
+
 //setInterval用変数
 let nIntervId;
 
@@ -26,15 +40,10 @@ function timerCalc() {
 	let timeStr = document.getElementById("timeId").value;
 	
 	//文字列に全角数字と「：」が含まれていたら半角文字に置換
-	const zenkaku = ["０","１","２","３","４","５","６","７","８","９","："];
-	const hankaku = ["0","1","2","3","4","5","6","7","8","9",":"];
 	for (let i = 0; i < zenkaku.length; i++) {
 		timeStr = timeStr.replaceAll(zenkaku[i], hankaku[i]);
 	}
-	//テキストエリアの文字判定用の正規表現（数字のみ）
-	const reStr1 = /^[0-9]+$/;
-	//テキストエリアの文字判定用の正規表現（「数字:数字」表示）
-	const reStr2 = /^[0-9]+:[0-9]+$/;
+	timeStr = timeStr.replaceAll("：", ":");
 	
 	if ( (reStr1.test(timeStr))||(reStr2.test(timeStr)) ) {
 		let timeNum;
@@ -62,13 +71,13 @@ function timerCalc() {
 				const music = new Audio('sound/se1.mp3');	//HTMLAudioElement: Audio() コンストラクター
 				music.play();
 			}
-			document.getElementById('endposition').innerHTML = '時間になりました。';
+			document.getElementById('endposition').innerHTML = "時間になりました。";
 			stopcountdown();
 		}
 	document.getElementById("timeId").value = timeNum;
 	//正規表現に当てはまらない文字列はタイマーを停止
 	} else {
-		document.getElementById('endposition').innerHTML = '入力文字列は無効です。';
+		document.getElementById('endposition').innerHTML = "入力文字列は無効です。";
 		stopcountdown();
 	}
 }
@@ -85,3 +94,44 @@ function stopcountdown() {
 
 startEl.addEventListener("click", countdown);
 stopEl.addEventListener("click", stopcountdown);
+
+//カウントアップ-----------------------------------------
+
+//テキストエリアに文字入力した時に4桁以上なら先頭4文字にカットする
+document.getElementById("CountUPtimeId").addEventListener("input", () => {
+	// 入力値を文字列として取得
+	let value = document.getElementById("CountUPtimeId").value;
+	// 2文字を超える場合は先頭2文字にカット
+	if (value.length > 4) {
+		input.value = value.slice(0, 4);
+	}
+});
+
+// ボタンクリック時のカウントアップ
+document.getElementById("CountUP").addEventListener("click", () => {
+	//表示初期化（div内削除）
+	document.getElementById("CountUPendposition").replaceChildren();
+	
+	//テキストエリアの文字列を取得する
+	let CountUPStr = document.getElementById("CountUPtimeId").value;
+	
+	//文字列に全角数字が含まれていたら半角文字に置換
+	for (let i = 0; i < zenkaku.length; i++) {
+		CountUPStr = CountUPStr.replaceAll(zenkaku[i], hankaku[i]);
+	}
+	
+	//正規表現で数値列か確認し、Number()でテキストエリアの文字列を数値変換
+	if ( (reStr1.test(CountUPStr)) ) {
+		let CountUPNum = Number(CountUPStr);
+		//CountUPNumが9999未満ならカウントアップする
+			if ( CountUPNum < 9999 ) {
+				CountUPNum = CountUPNum + 1;
+			} else {
+				document.getElementById("CountUPendposition").innerHTML = "カウントは9999でストップです。";
+			}
+		document.getElementById("CountUPtimeId").value = CountUPNum;
+	} else {
+		document.getElementById("CountUPendposition").innerHTML = "入力文字列は無効です。";
+		document.getElementById("CountUPtimeId").value = 1;
+	}
+});
